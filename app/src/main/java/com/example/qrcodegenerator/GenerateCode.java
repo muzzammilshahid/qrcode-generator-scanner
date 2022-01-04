@@ -64,9 +64,19 @@ public class GenerateCode extends AppCompatActivity {
             } else if (textInputLayoutName.getEditText().getText().toString().trim().length() != 0 &&
                     textInputLayoutNumber.getEditText().getText().toString().trim().length() != 0 &&
                     textInputLayoutEmail.getEditText().getText().toString().trim().length() != 0) {
+
                 textInputLayoutName.setError(null);
+                textInputLayoutName.getEditText().setText("");
+                textInputLayoutName.clearFocus();
+
                 textInputLayoutNumber.setError(null);
+                textInputLayoutNumber.getEditText().setText("");
+                textInputLayoutNumber.clearFocus();
+
                 textInputLayoutEmail.setError(null);
+                textInputLayoutEmail.getEditText().setText("");
+                textInputLayoutEmail.clearFocus();
+
                 try {
                     JSONObject person = new JSONObject();
                     try {
