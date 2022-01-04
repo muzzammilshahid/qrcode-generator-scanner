@@ -1,46 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ScanActivity">
 
     <SurfaceView
-        android:layout_centerHorizontal="true"
-        android:id="@+id/camera"
+        android:id="@+id/camera_surface"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_marginTop="32dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
 
     <TextView
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:textSize="30sp"
-        android:id="@+id/text"
+        android:id="@+id/textview_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/camera_surface"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:textColor="@color/black"
-        android:layout_below="@+id/camera"/>
+        android:textSize="30sp" />
 
     <TextView
+        android:id="@+id/textview_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:textSize="30sp"
-        android:id="@+id/num"
+        android:layout_below="@+id/textview_name"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:textColor="@color/black"
-        android:layout_below="@+id/text"/>
+        android:textSize="30sp" />
 
     <TextView
+        android:id="@+id/textview_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:textSize="30sp"
-        android:id="@+id/email"
+        android:layout_below="@+id/textview_number"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:textColor="@color/black"
-        android:layout_below="@+id/num"/>
+        android:textSize="30sp" />
 
 </RelativeLayout>

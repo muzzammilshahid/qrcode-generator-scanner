@@ -7,16 +7,16 @@
 
 
     <Button
-        android:id="@+id/generate"
+        android:id="@+id/qrcode_generate_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Generate QR Code"
-        android:layout_above="@+id/scan"
+        android:layout_above="@+id/scan_button"
         android:layout_marginBottom="19dp"
         android:layout_centerHorizontal="true"/>
 
     <Button
-        android:id="@+id/scan"
+        android:id="@+id/scan_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Scan QRCode"
@@ -25,9 +25,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/gallery"
+        android:id="@+id/scan_from_gallery_button"
         android:text="Scan from gallery"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp"
-        android:layout_below="@+id/scan"/>
+        android:layout_below="@+id/scan_button"/>
 </RelativeLayout>
