@@ -16,7 +16,6 @@
         android:id="@+id/textview_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/camera_surface"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:textColor="@color/black"
@@ -42,4 +41,13 @@
         android:textColor="@color/black"
         android:textSize="30sp" />
 
+    <Button
+        android:id="@+id/refresh_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Re scan"
+        android:visibility="gone" />
 </RelativeLayout>

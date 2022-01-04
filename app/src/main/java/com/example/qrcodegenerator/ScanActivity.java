@@ -8,6 +8,8 @@ import android.os.Vibrator;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,6 +34,7 @@ public class ScanActivity extends AppCompatActivity {
     private TextView textViewNumber;
     private TextView textViewEmail;
     private BarcodeDetector barcodeDetector;
+    private Button refreshButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,15 @@ public class ScanActivity extends AppCompatActivity {
         textViewName = findViewById(R.id.textview_name);
         textViewNumber = findViewById(R.id.textview_number);
         textViewEmail = findViewById(R.id.textview_email);
+        refreshButton = findViewById(R.id.refresh_button);
+
+        refreshButton.setOnClickListener(view -> {
+            overridePendingTransition(0, 0);
+            finish();
+            overridePendingTransition(0, 0);
+            startActivity(getIntent());
+            overridePendingTransition(0, 0);
+        });
 
         barcodeDetector = new BarcodeDetector.Builder(getApplicationContext())
                 .setBarcodeFormats(Barcode.QR_CODE).build();
@@ -83,16 +95,17 @@ public class ScanActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(jsonStr);
                     String name = jsonObject.getString("Name");
-                    String num = jsonObject.getString("Number");
+                    String number = jsonObject.getString("Number");
                     String email = jsonObject.getString("Email");
                     if (qrcode.size() != 0) {
                         textViewName.post(() -> textViewName.setText(name));
-                        textViewNumber.post(() -> textViewNumber.setText(num));
+                        textViewNumber.post(() -> textViewNumber.setText(number));
                         textViewEmail.post(() -> textViewEmail.setText(email));
+                        refreshButton.post(() -> refreshButton.setVisibility(View.VISIBLE));
                         Vibrator vb = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                         vb.vibrate(100);
+                        surfaceView.setVisibility(View.GONE);
                     }
-                    System.out.println("abcd" + jsonObject.getString("Name"));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
