@@ -5,20 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".Gallery">
 
-    <Button
-        android:id="@+id/browse_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textview_name"
-        android:layout_centerHorizontal="true"
-        android:text="Browse" />
-
     <TextView
         android:id="@+id/textview_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="19dp"
+        android:layout_above="@+id/textview_number"
+        android:layout_centerHorizontal="true"
         android:textColor="@color/black"
         android:textSize="30sp" />
 
@@ -26,7 +18,7 @@
         android:id="@+id/textview_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textview_name"
+        android:layout_above="@+id/textview_email"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp"
         android:textColor="@color/black"
@@ -36,9 +28,17 @@
         android:id="@+id/textview_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textview_number"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:layout_marginTop="19dp"
         android:textColor="@color/black"
         android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/browse_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Browse" />
 </RelativeLayout>
